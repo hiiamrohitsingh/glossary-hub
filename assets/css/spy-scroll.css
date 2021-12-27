@@ -1,0 +1,122 @@
+:root {
+    --space: 1rem;
+    --border: 4px;
+    --page-width: 80ch;
+    --color-link: #520dc2;
+    --color-active: #f24175;
+    --ease: cubic-bezier(0.23, 1, 0.32, 1);
+    --duration: 350ms;
+    --section-offset: 0;
+}
+
+.sections-navigation {
+    padding:5px 0;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%);
+}
+
+.nav-sections .menu {
+    list-style: none;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: scroll;
+    overscroll-behavior: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin: 0 auto;
+    max-width: 100%;
+    transform: translateZ(0);
+    transition: transform var(--ease) var(--duration);
+}
+
+.nav-sections .menu::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-sections .menu-item-link {
+    font-weight: bold;
+    font-size:25px;
+    display: block;
+    padding:7px 14px;
+    text-decoration: none;
+    white-space: nowrap;
+    color: var(--color-link);
+    transition: color var(--ease) var(--duration);
+}
+
+.nav-sections .menu-item-link.active {
+    color: var(--color-active);
+}
+
+.active-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background-color: var(--color-active);
+    transition: width var(--ease) var(--duration), transform var(--ease) var(--duration);
+}
+
+.page-section {
+    padding: calc(var(--space) * 2) var(--space);
+}
+
+.section-title {
+    /* color:#343a40; */
+    color: #520dc2;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.section-title:before {
+    content: "";
+    display: block;
+    visibility: hidden;
+    pointer-events: none;
+    margin-top: calc(var(--section-offset) * -1px);
+    height: calc(var(--section-offset) * 1px);
+}
+
+.post-container{
+    padding:0 !important;
+}
+
+.post-title{
+    margin:0;
+    padding:5px 10px;
+    text-align:center;
+    background-color:#f5f8fa;
+}
+
+.post-share{
+    margin:0;
+    padding:5px 10px;
+    background-color:#f5f8fa;
+    text-align:center;
+}
+
+.post-share svg{
+    width:32px;
+    height:32px;
+    margin:0 10px;
+}
+
+.page-section .col-md-4 {
+    margin: 10px 0;
+}
+.page-section .card {
+    padding:10px;
+    border: 0 !important;
+    background-color:#f5f8fa;
+    background-color:#fff;
+}
+.page-section .card h3 {
+    color: #f24175;
+}
+.page-section .card p {
+    margin: 0;
+}
